@@ -1,0 +1,271 @@
+:root {
+  --main-bg-color: #151515;
+  --secondary-bg-color: #343434;
+  --main-font-family: DIN, Helvetica, Arial, sans-serif;
+}
+button,
+button::after {
+  padding: 16px 20px;
+  font-size: 18px;
+  background: linear-gradient(45deg, transparent 5%, #ff013c 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  line-height: 1;
+  box-shadow: 6px 0px 0px #00e6f6;
+  outline: transparent;
+  position: relative;
+}
+
+button::after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  content: "HOVER ME";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 3%,
+    #00e6f6 3%,
+    #00e6f6 5%,
+    #ff013c 5%
+  );
+  text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+  clip-path: var(--slice-0);
+}
+
+button:hover::after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+input {
+  box-sizing: border-box;
+  height: 10px;
+  font-family: var(--main-font-family);
+  padding: 1rem;
+  background-color: var(--secondary-bg-color);
+  color: white;
+}
+
+hr {
+  background-color: var(--secondary-bg-color);
+}
+
+.links-layout {
+  justify-self: left;
+  position: relative;
+  margin: 1rem;
+}
+
+.link {
+  margin: 0.5rem;
+}
+
+.search-layout {
+  justify-self: right;
+  position: relative;
+  margin: 1rem;
+}
+
+.search-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 4px;
+  position: absolute;
+  box-sizing: border-box;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.content-layout {
+  display: grid;
+  grid-row-gap: 1em;
+  /* margin: 1rem; */
+}
+
+.select-item {
+  padding: 1rem;
+  background-color: var(--secondary-bg-color);
+  color: white;
+  cursor: pointer;
+}
+
+.item-list-layout {
+  border: solid 1px var(--secondary-bg-color);
+  display: grid;
+  color: white;
+  grid-template-columns: 1fr 1fr;
+  padding: 1rem;
+}
+
+.item-image-layout {
+  display: grid;
+  place-items: center;
+  grid-row-gap: 1em;
+}
+
+.item-image {
+  width: 30%;
+  border-radius: 10px;
+}
+
+.delete-button {
+  background: red;
+  color: white;
+  padding: 1rem;
+  border: 1px solid var(--secondary-bg-color);
+  border-radius: 10px;
+  cursor: pointer;
+  width: 12rem;
+}
+
+.delete-button:active {
+  background-color: brown;
+  transform: translateY(4px);
+}
+
+.favorite-button {
+  background: rgb(50, 43, 122);
+  color: white;
+  padding: 1rem;
+  border: 1px solid var(--secondary-bg-color);
+  border-radius: 10px;
+  cursor: pointer;
+  width: 12rem;
+}
+
+.favorite-button:active {
+  background-color: rgb(37, 33, 81);
+  transform: translateY(4px);
+}
+
+footer {
+  background-image: url(https://abrakadabra.fun/uploads/posts/2021-12/1640384379_7-abrakadabra-fun-p-banner-profilya-anime-7.png);
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+footer p {
+  font-size: 30px;
+  border-radius: 10%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #151515;
+  color: rgb(122, 122, 122);
+}
+
+footer button {
+  padding: 0.8em 1.8em;
+  border: 2px solid #17c3b2;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition: 0.3s;
+  z-index: 1;
+  font-family: inherit;
+  color: #17c3b2;
+}
+
+footer button::before {
+  content: "";
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #17c3b2;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+footer button:hover::before {
+  width: 105%;
+}
+
+footer button:hover {
+  color: #111;
+}
